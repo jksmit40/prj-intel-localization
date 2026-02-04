@@ -127,7 +127,7 @@ header p {
 }
 
 /* Timeline Card Styling */
-.section-cards > div {
+.section-cards > article {
   /* Calculate width to show exactly 4 cards on large screens */
   /* 40px for section padding (20px each side), 90px for 3 gaps (30px each) */
   min-width: calc((100vw - 40px - 90px) / 4 - 5px);
@@ -146,13 +146,13 @@ header p {
 }
 
 /* Card hover effect - lifts the card */
-.section-cards > div:hover {
+.section-cards > article:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0, 113, 197, 0.3);
 }
 
 /* Year (h2) styling */
-.section-cards > div h2 {
+.section-cards > article h2 {
   background-color: #0071c5;
   color: white;
   font-size: 32px;
@@ -163,7 +163,7 @@ header p {
 }
 
 /* Title (h3) styling */
-.section-cards > div h3 {
+.section-cards > article h3 {
   color: #0071c5;
   font-size: 22px;
   font-weight: bold;
@@ -173,7 +173,7 @@ header p {
 }
 
 /* Placeholder for images */
-.section-cards > div img {
+.section-cards > article img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -181,7 +181,7 @@ header p {
 }
 
 /* Paragraph styling - hidden by default */
-.section-cards > div p {
+.section-cards > article p {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -203,13 +203,13 @@ header p {
 }
 
 /* Show paragraph on hover - slides up over the image */
-.section-cards > div:hover p {
-  transform: translateY(0);
+.section-cards > article:hover p {
+  transform: translateY(16%);
 }
 
 /* Show paragraph when card is clicked on mobile/tablet */
-.section-cards > div.clicked p {
-  transform: translateY(0);
+.section-cards > article.clicked p {
+  transform: translateY(16%);
 }
 
 /* Scroll instruction text at bottom */
@@ -226,14 +226,14 @@ body > p {
 
 /* Tablets: Show 2 cards at a time */
 @media screen and (max-width: 1024px) {
-  .section-cards > div {
+  .section-cards > article {
     min-width: calc((100vw - 40px - 30px) / 2 - 5px);
     width: calc((100vw - 40px - 30px) / 2 - 5px);
     height: 467px;
   }
 
   /* Reduce overlay height for tablets */
-  .section-cards > div p {
+  .section-cards > article p {
     height: 120px;
     line-height: 1.4;
     font-size: 15px;
@@ -267,7 +267,7 @@ body > p {
     display: none;
   }
 
-  .section-cards > div {
+  .section-cards > article {
     min-width: calc(100vw - 40px - 10px);
     width: calc(100vw - 40px - 10px);
     height: 500px;
@@ -302,17 +302,17 @@ body > p {
     gap: 20px;
   }
 
-  .section-cards > div h2 {
+  .section-cards > article h2 {
     font-size: 28px;
     padding: 15px;
   }
 
-  .section-cards > div h3 {
+  .section-cards > article h3 {
     font-size: 18px;
     padding: 15px;
   }
 
-  .section-cards > div p {
+  .section-cards > article p {
     /* Covers approximately 25% of the card height */
     height: auto;
     max-height: 140px;
@@ -326,11 +326,11 @@ body > p {
   }
 
   /* Show text when tapped/clicked (hover on mobile) */
-  .section-cards > div:hover p {
+  .section-cards > article:hover p {
     transform: translateY(0);
   }
 
-  .section-cards > div img {
+  .section-cards > article img {
     height: 250px;
   }
 }
@@ -358,15 +358,15 @@ body > p {
     margin-bottom: 20px;
   }
 
-  .section-cards > div {
+  .section-cards > article {
     height: 450px;
   }
 
-  .section-cards > div h2 {
+  .section-cards > article h2 {
     font-size: 24px;
   }
 
-  .section-cards > div h3 {
+  .section-cards > article h3 {
     font-size: 16px;
   }
 }
