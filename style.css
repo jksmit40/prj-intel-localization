@@ -1,0 +1,372 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and background for the entire page */
+body {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  background-color: #e8eef2;
+  color: #2c3e50;
+  overflow-x: hidden;
+}
+
+/* Header / Hero Section Styling */
+header {
+  background: linear-gradient(135deg, #0071c5 0%, #0054a6 50%, #003d7a 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background elements */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 199, 253, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(0, 113, 197, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Container for header content */
+header div {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Intel logo styling */
+header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main heading in header */
+header h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInUp 0.9s ease-out 0.2s both;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subheading paragraph in header */
+header p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 0.9s ease-out 0.4s both;
+  opacity: 0.95;
+}
+
+/* Timeline Section - Horizontal Scroll Container */
+section {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 40px 20px;
+  gap: 30px;
+  background-color: #f8fafb;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling for a tech-savvy look */
+section::-webkit-scrollbar {
+  height: 12px;
+}
+
+section::-webkit-scrollbar-track {
+  background: #d5dce0;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #0071c5 0%, #5a6c7d 100%);
+  border-radius: 6px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #0054a6 0%, #34495e 100%);
+}
+
+/* Timeline Card Styling */
+section > div {
+  /* Calculate width to show exactly 4 cards on large screens */
+  /* 40px for section padding (20px each side), 90px for 3 gaps (30px each) */
+  min-width: calc((100vw - 40px - 90px) / 4 - 5px);
+  width: calc((100vw - 40px - 90px) / 4 - 5px);
+  height: 450px;
+  background-color: white;
+  border: 3px solid #0071c5;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(52, 73, 94, 0.1);
+  /* Prevent cards from shrinking */
+  flex-shrink: 0;
+}
+
+/* Card hover effect - lifts the card */
+section > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 113, 197, 0.3);
+}
+
+/* Year (h2) styling */
+section > div h2 {
+  background-color: #0071c5;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 3px solid #0054a6;
+}
+
+/* Title (h3) styling */
+section > div h3 {
+  color: #0071c5;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  background-color: #ecf3f8;
+}
+
+/* Placeholder for images */
+section > div img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Paragraph styling - hidden by default */
+section > div p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Make background tall enough to cover bottom white space */
+  height:100px;
+  background: linear-gradient(135deg, rgba(0, 113, 197, 0.95) 0%, rgba(52, 73, 94, 0.95) 100%);
+  color: white;
+  padding: 25px;
+  font-size: 14px;
+  line-height: 1.6;
+  /* Hidden by default - positioned below the card */
+  transform: translateY(100%);
+  /* Smooth transition when showing/hiding */
+  transition: transform 0.4s ease;
+  /* Ensure text stays within bounds */
+  display: flex;
+  align-items: center;
+}
+
+/* Show paragraph on hover - slides up over the image */
+section > div:hover p {
+  transform: translateY(0);
+}
+
+/* Show paragraph when card is clicked on mobile/tablet */
+section > div.clicked p {
+  transform: translateY(0);
+}
+
+/* Scroll instruction text at bottom */
+body > p {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+  color: #5a6c7d;
+  background-color: #e8eef2;
+  font-style: italic;
+}
+
+/* Responsive Design - Media Queries */
+
+/* Tablets: Show 2 cards at a time */
+@media screen and (max-width: 1024px) {
+  section > div {
+    min-width: calc((100vw - 40px - 30px) / 2 - 5px);
+    width: calc((100vw - 40px - 30px) / 2 - 5px);
+    height: 467px;
+  }
+
+  /* Reduce overlay height for tablets */
+  section > div p {
+    height: 120px;
+    line-height: 1.4;
+    font-size: 15px;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Phones: Show 1 card at a time with vertical scrolling */
+@media screen and (max-width: 768px) {
+  /* Switch from horizontal to vertical scrolling */
+  section {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    /* Hide scrollbar while keeping scrolling functionality */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-snap-type: y proximity;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  section::-webkit-scrollbar {
+    display: none;
+  }
+
+  section > div {
+    min-width: calc(100vw - 40px - 10px);
+    width: calc(100vw - 40px - 10px);
+    height: 500px;
+  }
+
+  header {
+    padding: 50px 20px 60px;
+    background: linear-gradient(135deg, #0071c5 0%, #0054a6 50%, #003d7a 100%);
+  }
+
+  /* Make logo larger and add a glow effect on mobile */
+  header img {
+    width: 120px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 15px rgba(0, 199, 253, 0.4));
+  }
+
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    word-spacing: 0.1em;
+    letter-spacing: 1px;
+  }
+
+  header p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  section {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  section > div h2 {
+    font-size: 28px;
+    padding: 15px;
+  }
+
+  section > div h3 {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  section > div p {
+    /* Covers approximately 25% of the card height */
+    height: auto;
+    max-height: 140px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    /* Hidden by default - shown only on tap/hover */
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+  }
+
+  /* Show text when tapped/clicked (hover on mobile) */
+  section > div:hover p {
+    transform: translateY(0);
+  }
+
+  section > div img {
+    height: 250px;
+  }
+}
+
+/* Small Mobile Phones */
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ffffff 0%, #e0f7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+
+  header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  header img {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  section > div {
+    height: 450px;
+  }
+
+  section > div h2 {
+    font-size: 24px;
+  }
+
+  section > div h3 {
+    font-size: 16px;
+  }
+}
