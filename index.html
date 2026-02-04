@@ -141,52 +141,69 @@
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
 
-  <section class="container">
-    <div class="row">
+  <section class="container-fluid my-5 py-4"> <!--Bootstrap usage within this line and all the future lines in this project-->
+    <div class="row g-4 justify-content-evenly" style="background: linear-gradient(135deg, #0071c5 0%, #0054a6 100%); padding: 60px 0;">
       <!-- Column 1 -->
-      <div class="col-4">
-        <h2>RISE Strategy</h2>
-        <p>
-          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
-          Intel sets ambitious 2030 goals, including driving industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="col-12 col-md-3 col-lg-3">
+        <div class="p-4 bg-light rounded h-100">
+          <h2 class="mb-3 text-center">RISE Strategy</h2>
+          <p class="text-muted mb-4">
+            Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
+            Intel sets ambitious 2030 goals, including driving industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+          <!-- Learn More Button -->
+          <a href="#" class="btn btn-primary d-block">Learn More</a>
+        </div>
       </div>
 
       <!-- Column 2 -->
-      <div class="col-4">
-        <h2>Commitment</h2>
-        <p>
-          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
-          (Scope 1 and 2) by 2040. This commitment builds on decades of 
-          environmental initiatives and partnerships across the semiconductor 
-          industry.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="col-12 col-md-3 col-lg-3">
+        <div class="p-4 bg-light rounded h-100">
+          <h2 class="mb-3 text-center">Commitment</h2>
+          <p class="text-muted mb-4">
+            In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
+            (Scope 1 and 2) by 2040. This commitment builds on decades of 
+            environmental initiatives and partnerships across the semiconductor 
+            industry.
+          </p>
+          <!-- Learn More Button -->
+          <a href="#" class="btn btn-primary d-block">Learn More</a>
+        </div>
       </div>
 
       <!-- Column 3 -->
-      <div class="col-4" >
-        <h2>Water &amp; Waste</h2>
-        <p>
-          Intel conserves billions of gallons of water annually and 
-          collaborates with local communities to restore watersheds.
-          Intel also upcycles and recycles materials to reduce waste and 
-          advance a circular economy.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="col-12 col-md-3 col-lg-3">
+        <div class="p-4 bg-light rounded h-100">
+          <h2 class="mb-3 text-center">Water &amp; Waste</h2>
+          <p class="text-muted mb-4">
+            Intel conserves billions of gallons of water annually and 
+            collaborates with local communities to restore watersheds.
+            Intel also upcycles and recycles materials to reduce waste and 
+            advance a circular economy.
+          </p>
+          <!-- Learn More Button -->
+          <a href="#" class="btn btn-primary d-block">Learn More</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
+  <section class="container my-5 py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="p-4 bg-light rounded">
+          <h2 class="text-center mb-4">Subscribe to our Newsletter</h2>
+          <!-- Add form here -->
+          <div class="mb-3">
+            <label for="SubscriptionEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="SubscriptionEmail" placeholder="name@example.com">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- JavaScript for card interactions and horizontal scrolling -->
@@ -227,5 +244,8 @@
       });
     });
   </script>
+
+  <!-- Language Switcher for RTL/LTR Support -->
+  <script src="language-switcher.js"></script>
 </body>
 </html>
