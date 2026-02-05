@@ -370,3 +370,47 @@ body > p {
     font-size: 16px;
   }
 }
+
+/* ========================================
+   RTL (Right-to-Left) Language Support
+   ========================================
+   Adjusts layout for Arabic, Hebrew, Urdu, etc. */
+
+/* RTL: Reverse timeline scroll direction */
+[dir="rtl"] .section-cards {
+  /* Timeline scrolls right-to-left in RTL languages */
+  direction: rtl;
+}
+
+/* RTL: Keep card content left-to-right */
+[dir="rtl"] .section-cards > article {
+  /* Cards themselves display normally */
+  direction: ltr;
+  /* Align text to the right for RTL reading */
+  text-align: right;
+}
+
+/* RTL: Right-align year and title */
+[dir="rtl"] .section-cards > article h2,
+[dir="rtl"] .section-cards > article h3 {
+  text-align: right;
+}
+
+/* RTL: Right-align card paragraph text */
+[dir="rtl"] .section-cards > article p {
+  text-align: right;
+  /* Right-to-left text direction */
+  direction: rtl;
+}
+
+/* RTL: Header text alignment */
+[dir="rtl"] header {
+  text-align: right;
+  direction: rtl;
+}
+
+/* RTL: Right-align instruction text */
+[dir="rtl"] body > p {
+  text-align: right;
+  direction: rtl;
+}
